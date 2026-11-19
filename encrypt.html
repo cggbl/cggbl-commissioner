@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CGGBL – Lock the Draft Night page</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F3F3;--panel:#FFF;--ink:#000;--muted:#5C5C5C;--line:#D6D6D6;--red:#D20033;--ok:#1F6B36;--ok-bg:#E3F2E7;--bad:#A3001F;--bad-bg:#FCE6EB;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#121212;--panel:#1D1D1D;--ink:#F5F5F5;--muted:#A8A8A8;--line:#343434;--red:#FF3358;--ok:#7DD3A0;--ok-bg:#12301E;--bad:#FF8FA3;--bad-bg:#3A1018;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Barlow,system-ui,sans-serif}
+main{max-width:640px;margin:0 auto;padding:32px 20px 48px}
+h1{font:700 34px/1.1 "Barlow Condensed",Barlow,sans-serif;margin:0 0 6px;border-left:6px solid var(--red);padding-left:12px}
+p.sub{color:var(--muted);margin:0 0 24px}
+section{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin-bottom:14px}
+h2{font-size:17px;margin:0 0 4px}
+.hint{color:var(--muted);font-size:14px;margin:0 0 10px}
+input[type=password],input[type=file]{width:100%;font:inherit;color:inherit;background:transparent;border:1px solid var(--line);border-radius:6px;padding:9px 10px;margin-top:6px}
+label{display:block;font-weight:600;font-size:14px;margin-top:10px}
+button{font:600 17px Barlow,sans-serif;background:var(--red);color:#fff;border:0;border-radius:6px;padding:12px 22px;cursor:pointer;width:100%}
+button:disabled{opacity:.45;cursor:default}
+button:focus-visible,input:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+#out{margin-top:14px}
+.msg{border-radius:6px;padding:12px 14px;margin-top:8px;font-size:15px}
+.msg.ok{background:var(--ok-bg);color:var(--ok)}
+.msg.bad{background:var(--bad-bg);color:var(--bad)}
+.msg ul{margin:6px 0 0;padding-left:20px}
+</style>
+</head>
+<body>
+<main>
+<h1>Lock the Draft Night page</h1>
+<p class="sub">Runs entirely in this browser. Nothing is uploaded, and the passphrase never leaves this screen.</p>
+
+<section>
+<h2>1. Page template</h2>
+<p class="hint">Draft_Night_template.html from the claude-project folder.</p>
+<input type="file" id="tpl" accept=".html">
+</section>
+
+<section>
+<h2>2. Season data</h2>
+<p class="hint">The bundle .json file Claude produced at registration close. Keep it off GitHub.</p>
+<input type="file" id="bundle" accept=".json">
+</section>
+
+<section>
+<h2>3. Season passphrase</h2>
+<p class="hint">New every season. Share it only with draft facilitators.</p>
+<label for="p1">Passphrase</label><input type="password" id="p1" autocomplete="new-password">
+<label for="p2">Type it again</label><input type="password" id="p2" autocomplete="new-password">
+</section>
+
+<button id="go" disabled>Build index.html</button>
+<div id="out" aria-live="polite"></div>
+</main>
+
+<script>
+/* ---- core (no DOM) ---- */
+const ITER=600000;
+const toB64=u8=>{let s='';for(let i=0;i<u8.length;i+=0x8000)s+=String.fromCharCode.apply(null,u8.subarray(i,i+0x8000));return btoa(s);};
+const fromB64=t=>Uint8Array.from(atob(t),c=>c.charCodeAt(0));
+async function deriveKey(pass,salt,usage){
+  const km=await crypto.subtle.importKey('raw',new TextEncoder().encode(pass),'PBKDF2',false,['deriveKey']);
+  return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:ITER,hash:'SHA-256'},km,{name:'AES-GCM',length:256},false,[usage]);
+}
+function checkBundle(b){
+  const e=[];
+  if(!b||typeof b!=='object')return ['The data file isn’t a season bundle.'];
+  if(!b.season)e.push('Missing "season".');
+  if(!b.built)e.push('Missing "built".');
+  if(!Array.isArray(b.divisions)||!b.divisions.length)e.push('Missing "divisions".');
+  else b.divisions.forEach((d,i)=>{if(!d.division||!Array.isArray(d.players)||!Array.isArray(d.coaches))e.push(`Division ${i+1} is missing division, players or coaches.`);});
+  return e;
+}
+async function build(template,bundleText,pass){
+  const n=template.split('__ENC__').length-1;
+  if(n!==1)throw new Error(n===0?'That template has no __ENC__ marker. Use Draft_Night_template.html, not a built index.html.':'The template has more than one __ENC__ marker.');
+  let bundle;try{bundle=JSON.parse(bundleText);}catch{throw new Error('The data file isn’t valid JSON.');}
+  const be=checkBundle(bundle);if(be.length)throw new Error(be.join(' '));
+  const plain=JSON.stringify(bundle);
+  const salt=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12));
+  const ct=new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM',iv},await deriveKey(pass,salt,'encrypt'),new TextEncoder().encode(plain)));
+  const enc={salt:toB64(salt),iv:toB64(iv),iter:ITER,ct:toB64(ct)};
+  const html=template.replace('__ENC__',()=>JSON.stringify(enc));
+  // round trip: decrypt exactly as the page does
+  const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:fromB64(enc.iv)},await deriveKey(pass,fromB64(enc.salt),'decrypt'),fromB64(enc.ct));
+  if(new TextDecoder().decode(pt)!==plain)throw new Error('Round-trip check failed. Nothing was saved.');
+  // no player name in plain text (ignore words the template already contains, like "Back")
+  const leaks=[];
+  for(const d of bundle.divisions)for(const p of d.players||[]){
+    for(const w of [p.last,`${p.first} ${p.last}`]){
+      if(!w||String(w).length<3)continue;
+      const re=new RegExp('\\b'+String(w).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b');
+      if(re.test(html)&&!re.test(template)){leaks.push(w);break;}
+    }
+  }
+  if(leaks.length)throw new Error('Player names appear in plain text: '+leaks.slice(0,5).join(', ')+'. Nothing was saved.');
+  const players=bundle.divisions.reduce((s,d)=>s+d.players.length,0);
+  return {html,season:bundle.season,built:bundle.built,divisions:bundle.divisions.map(d=>`${d.division} (${d.players.length})`),players};
+}
+if(typeof module!=='undefined')module.exports={build,checkBundle};
+
+/* ---- page ---- */
+if(typeof document!=='undefined'){
+  const $=id=>document.getElementById(id),out=$('out');
+  const ready=()=>{$('go').disabled=!($('tpl').files[0]&&$('bundle').files[0]&&$('p1').value);};
+  ['tpl','bundle','p1','p2'].forEach(id=>$(id).addEventListener('input',ready));
+  const show=(cls,html)=>{out.innerHTML=`<div class="msg ${cls}">${html}</div>`;};
+  const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  $('go').addEventListener('click',async()=>{
+    if(!crypto.subtle)return show('bad','This browser can’t encrypt here. Open the file in Chrome, Edge, Firefox or Safari.');
+    const p=$('p1').value;
+    if(p!==$('p2').value)return show('bad','The two passphrases don’t match.');
+    if(p.length<12)return show('bad','Use a passphrase of at least 12 characters. Three or four unrelated words work well.');
+    $('go').disabled=true;show('ok','Building and checking… this takes a few seconds.');
+    try{
+      const r=await build(await $('tpl').files[0].text(),await $('bundle').files[0].text(),p);
+      const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([r.html],{type:'text/html'}));a.download='index.html';a.click();
+      show('ok',`<strong>index.html saved to your downloads.</strong> ${esc(r.season)}, data built ${esc(r.built)}, ${r.players} players.<ul>${r.divisions.map(d=>`<li>${esc(d)}</li>`).join('')}</ul><p style="margin:8px 0 0">Checked: unlocks with this passphrase, no player names in plain text. Upload it to the repository as index.html, then delete the .json file from this computer.</p>`);
+    }catch(e){show('bad',esc(e.message));}
+    finally{ready();}
+  });
+}
+</script>
+</body>
+</html>

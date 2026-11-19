@@ -1,0 +1,18 @@
+# Keeps player and parent data out of this public repository.
+# Spreadsheets and exports
+*.xlsx
+*.xls
+*.xlsm
+*.csv
+*.tsv
+*.numbers
+# Documents (eval sheets, draft results, jersey orders)
+*.pdf
+*.doc
+*.docx
+# Data files (division files, season bundles)
+*.json
+*.jsonl
+# OS clutter
+.DS_Store
+Thumbs.db
