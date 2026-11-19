@@ -291,11 +291,11 @@ The commissioner uploads it to the repository as index.html. Change the passphra
 {
   "division": "2nd Grade",
   "players": [
-    {"bib": 44, "first": "Jane", "last": "Doe", "school": "Example Elementary",
+    {"bib": 44, "first": "Jane", "last": "Example", "school": "Example Elementary",
      "rec": 0, "trav": 0, "nights": ["M","T","W","Th","F"], "confirmed": true, "raw": "Open"}
   ],
   "coaches": [
-    {"name": "Smith", "night": "W", "daughters": [66], "assistant": null}
+    {"name": "Coachname", "night": "W", "daughters": [66], "assistant": null}
   ],
   "links": [[89, 90]],
   "absent": []
