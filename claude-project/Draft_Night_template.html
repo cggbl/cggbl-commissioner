@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CGGBL Draft Night</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F3F3; --panel:#FFFFFF; --ink:#000000; --muted:#5C5C5C; --line:#D6D6D6;
+  --red:#D20033; --red-ink:#FFFFFF; --black:#000000; --black-ink:#FFFFFF;
+  --accent:var(--red); --accent-ink:var(--red-ink);
+  --must:#A3001F; --must-bg:#FCE6EB; --should:#8A5A00; --should-bg:#FFF2D2;
+  --ok:#1F6B36; --ok-bg:#E3F2E7; --skip:#5C5C5C; --skip-bg:#ECECEC;
+  --gray-row:#E6E6E6; --disc:transparent;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121212; --panel:#1D1D1D; --ink:#F5F5F5; --muted:#A8A8A8; --line:#343434;
+    --red:#FF3358; --red-ink:#FFFFFF; --black:#000000; --black-ink:#FFFFFF;
+    --must:#FF8A9E; --must-bg:#3A1219; --should:#F5C451; --should-bg:#3A2E10;
+    --ok:#7DD3A0; --ok-bg:#12301E; --skip:#A8A8A8; --skip-bg:#2A2A2A; --gray-row:#2A2A2A; --disc:#FFFFFF;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121212; --panel:#1D1D1D; --ink:#F5F5F5; --muted:#A8A8A8; --line:#343434;
+  --red:#FF3358; --red-ink:#FFFFFF; --black:#000000; --black-ink:#FFFFFF;
+  --must:#FF8A9E; --must-bg:#3A1219; --should:#F5C451; --should-bg:#3A2E10;
+  --ok:#7DD3A0; --ok-bg:#12301E; --skip:#A8A8A8; --skip-bg:#2A2A2A; --gray-row:#2A2A2A; --disc:#FFFFFF;
+  color-scheme: dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Barlow,"Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.4}
+h1,h2,h3,.cond{font-family:"Barlow Condensed","Arial Narrow",Barlow,sans-serif}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 24px;border-bottom:6px solid var(--red);box-shadow:0 3px 0 var(--black);background:var(--panel);flex-wrap:wrap;margin-bottom:3px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand .badge{width:76px;height:76px;border-radius:50%;background:var(--disc);display:grid;place-items:center;flex:none}
+.brand .badge img{width:72px;height:72px;object-fit:contain;display:block}
+.brand .league{font:700 13px Barlow,sans-serif;color:var(--red);letter-spacing:.02em}
+.gatelogo{display:block;width:min(240px,64vw);aspect-ratio:1;object-fit:contain;margin:8px auto 18px;background:var(--disc);border-radius:50%;padding:18px;box-sizing:border-box}
+header.top h1{margin:0;font-size:32px;font-weight:800;letter-spacing:.01em;line-height:1}
+header.top .div{color:var(--muted);font-weight:600}
+nav.steps{display:flex;gap:4px;flex-wrap:wrap}
+nav.steps button{border:1px solid var(--line);background:transparent;color:var(--muted);padding:6px 12px;border-radius:6px;font:600 14px Barlow,sans-serif;cursor:pointer}
+nav.steps button.on{background:var(--black);color:var(--black-ink);border-color:var(--black)}
+nav.steps button:disabled{opacity:.4;cursor:default}
+main{max-width:1400px;margin:0 auto;padding:24px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px;margin-bottom:20px}
+.panel h2{margin:0 0 4px;font-size:26px;font-weight:700}
+.team h3{border-top:4px solid var(--black);padding-top:6px}
+.sub{color:var(--muted);margin:0 0 16px}
+button.primary{background:var(--accent);color:var(--accent-ink);border:0;border-radius:8px;padding:10px 18px;font:700 16px Barlow,sans-serif;cursor:pointer}
+button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px 14px;font:600 15px Barlow,sans-serif;cursor:pointer}
+button.ghost.gcell{font-weight:500;text-align:left;padding:6px 10px;min-width:70px}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+input,select,textarea{font:500 16px Barlow,sans-serif;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 12px}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:13px;color:var(--muted);font-weight:600}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.chip{display:inline-block;min-width:26px;text-align:center;font-size:12px;font-weight:700;padding:1px 6px;border-radius:4px;background:var(--skip-bg);color:var(--muted);margin-right:3px}
+.chip.on{background:var(--black);color:var(--black-ink)}
+.flag{font-size:13px;font-weight:600;padding:2px 8px;border-radius:999px}
+.flag.must{background:var(--must-bg);color:var(--must)} .flag.should{background:var(--should-bg);color:var(--should)} .flag.ok{background:var(--ok-bg);color:var(--ok)}
+.note{border-left:4px solid var(--accent);padding:10px 14px;background:var(--bg);border-radius:0 8px 8px 0;margin:12px 0}
+.note.must{border-color:var(--must)} .note.ok{border-color:var(--ok)} .note.should{border-color:var(--should)}
+.err{color:var(--must);font-weight:600;min-height:1.4em}
+.panel.share{border:3px solid var(--must);background:var(--must-bg)}
+.panel.share h2{color:var(--must)}
+.sharewarn{font-weight:700;color:var(--must);margin:6px 0 12px}
+.sharesteps{margin:0 0 14px;padding-left:22px;font-size:17px;line-height:1.5}
+.sharesteps li{margin-bottom:10px}
+.sharesteps a{color:var(--must)}
+.btnlink{display:inline-block;margin-left:6px;padding:4px 12px;border:1px solid var(--must);border-radius:8px;text-decoration:none;font-weight:600}
+.tier{font:800 13px "Barlow Condensed",sans-serif;padding:1px 7px;border-radius:4px}
+.tier.A{background:var(--accent);color:var(--accent-ink)} .tier.C{background:var(--black);color:var(--black-ink)} .tier.B{background:var(--skip-bg);color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:900px){.grid2{grid-template-columns:1fr}}
+/* draft */
+.clock{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px}
+@media (max-width:1000px){.clock{grid-template-columns:1fr}}
+.onclock{background:var(--red);color:var(--red-ink);border-radius:12px;padding:22px 26px;border-bottom:8px solid var(--black)}
+.onclock .lbl{font-size:15px;opacity:.75}
+.onclock .who{font:800 clamp(56px,8vw,104px)/0.95 "Barlow Condensed",sans-serif;margin:4px 0 8px}
+.onclock .meta{font-size:18px;opacity:.9}
+.status{border-radius:10px;padding:14px 18px;margin-top:16px;font-size:19px;font-weight:600}
+.status.must{background:var(--must-bg);color:var(--must)} .status.should{background:var(--should-bg);color:var(--should)} .status.ok{background:var(--ok-bg);color:var(--ok)}
+.pickbox{display:flex;gap:10px;margin-top:16px}
+.pickbox input{font:800 34px "Barlow Condensed",sans-serif;width:150px;text-align:center}
+.board tr.allowed td{background:transparent}
+.board tr.mand td{background:var(--must-bg)}
+.board tr.sugg td{background:var(--should-bg)}
+.board tr.blocked td{opacity:.45}
+.teams{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.team{border:1px solid var(--line);border-radius:10px;padding:12px;background:var(--panel)}
+.team.cur{border:3px solid var(--red)}
+.team h3{margin:0;font-size:22px}
+.team .tm{color:var(--muted);font-size:14px;margin-bottom:6px}
+.team ol{margin:0;padding-left:0;list-style:none;font-size:14px}
+.team li{display:flex;gap:6px;align-items:center;padding:2px 0}
+.log{max-height:260px;overflow:auto;font-size:14px}
+.log div{padding:3px 0;border-bottom:1px dashed var(--line)}
+dialog{border:0;border-radius:12px;padding:24px;max-width:560px;background:var(--panel);color:var(--ink)}
+dialog::backdrop{background:rgba(0,0,0,.45)}
+.big{font:800 40px "Barlow Condensed",sans-serif}
+.muted{color:var(--muted)}
+details summary{cursor:pointer;font-weight:600}
+.narrow{max-width:720px;margin-left:auto;margin-right:auto}
+label.nt{display:inline-flex;gap:6px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:8px 12px;cursor:pointer;font-weight:600}
+label.nt input{width:18px;height:18px;margin:0;padding:0}
+.ok-txt{color:var(--ok);font-weight:600}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><div class="badge"><img src="data:image/png;base64,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" alt="Center Grove Basketball"></div><div><div class="league">Center Grove Girls Basketball League</div><h1>Draft Night</h1><div class="div" id="divname"></div></div></div>
+  <nav class="steps" id="steps"></nav>
+</header>
+<main id="app"></main>
+<dialog id="dlg"></dialog>
+<script>
+const ENC=__ENC__;
+const LOGO=document.querySelector('.badge img').src;
+const NIGHTS=['M','T','W','Th','F'];
+const NN={M:'Mon',T:'Tue',W:'Wed',Th:'Thu',F:'Fri'};
+const NL={M:'Monday',T:'Tuesday',W:'Wednesday',Th:'Thursday',F:'Friday'};
+const SIZES=['Youth XS','Youth Small','Youth Medium','Youth Large','Youth XL','Adult Small','Adult Medium','Adult Large','Adult XL'];
+let DATA,PL,ALL,LINK,BROKEN=[];
+/* a link is kept only if both players can make a night some team practices (and, for a coach's daughter, her coach's night); placement comes before a link */
+function linkProblem(a,b,d){const cs=(d||DATA).coaches;const ns=x=>(PL[x]?PL[x].nights:[]);const used=[...new Set(cs.map(c=>c.night))];
+  const common=used.filter(n=>ns(a).includes(n)&&ns(b).includes(n));if(!common.length)return 'no practice night in common';
+  const dc=cs.find(c=>normD(c).includes(a)||normD(c).includes(b));if(dc&&!common.includes(dc.night))return `${dc.name}’s team practices ${NL[dc.night]}s and one of them can’t make it`;return null;}
+function setData(d){DATA=d;PL={};d.players.forEach(p=>PL[p.bib]=p);ALL=d.players.map(p=>p.bib).sort((a,b)=>a-b);LINK={};BROKEN=[];
+  (d.links||[]).forEach(([a,b])=>{const why=linkProblem(a,b,d);if(why){BROKEN.push({a,b,why});return;}LINK[a]=b;LINK[b]=a;});}
+const normD=c=>Array.isArray(c.daughters)?c.daughters.map(Number):(c.daughter?[+c.daughter]:[]);
+const STEPS=['Check-in','Draft order','Eval grades','A & C lists','Draft','Rosters'];
+let BUNDLE=null,BASE=null,DKEY=null,S=null,SCREEN='gate',PICKED=null,EDIT=null;
+function hashStr(t){let h=2166136261;for(let i=0;i<t.length;i++){h^=t.charCodeAt(i);h=Math.imul(h,16777619);}return (h>>>0).toString(16).padStart(8,'0');}
+const baseHash=d=>hashStr(JSON.stringify(d));
+function fresh(d){return {hash:baseHash(d),step:0,order:null,
+  coaches:Object.fromEntries(d.coaches.map(c=>[c.name,{night:c.night||'',daughters:normD(c),assistant:c.assistant||null}])),
+  absent:[...(d.absent||[])],grades:{},gIdx:0,noShow:[],tieSwap:false,picks:[],ci:{nights:{},links:[],sizes:{}},ciDone:false};}
+function applyCI(){S.ci.sizes=S.ci.sizes||{};const d=JSON.parse(JSON.stringify(BASE));d.players.forEach(p=>{p.regSize=p.size||'';if(S.ci.sizes[p.bib])p.size=S.ci.sizes[p.bib];const n=S.ci.nights[p.bib];if(n){p.prev=p.nights;p.prevConfirmed=p.confirmed;p.nights=n;p.confirmed=true;p.ci=true;}});
+  d.links=[...(d.links||[]),...S.ci.links];setData(d);}
+function keyFor(d){return 'cggbl-dn:'+d.division;}
+function loadKey(k){try{const s=localStorage.getItem(k);return s?JSON.parse(s):null}catch(e){return null}}
+function save(){if(!DKEY||!S)return;try{localStorage.setItem(DKEY,JSON.stringify(S))}catch(e){}}
+let EXTRA={}; // nights added by in-the-moment overrides (rebuilt on replay)
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const nm=b=>PL[b]?`${PL[b].first} ${PL[b].last}`:`#${b}`;
+const sz=b=>(PL[b]&&PL[b].size)||'size not on file';
+const nums=s=>(String(s).match(/\d+/g)||[]).map(Number);
+const coachNames=()=>S.order||Object.keys(S.coaches);
+const T=()=>coachNames().length;
+const plan=()=>{const n=ALL.length,t=T();const base=Math.floor(n/t);return {base,E:n-base*t,max:base+(n-base*t>0?1:0)};};
+const nightsOf=b=>{const s=new Set(PL[b].nights);(EXTRA[b]||[]).forEach(x=>s.add(x));return [...s];};
+const chips=b=>NIGHTS.map(d=>`<span class="chip ${nightsOf(b).includes(d)?'on':''}">${NN[d][0]}${d==='Th'?'h':''}</span>`).join('')+(PL[b].confirmed?'':' <span class="flag should" title="Availability unreadable at registration; defaulted to all nights">unconfirmed</span>');
+function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const r=new Uint32Array(1);crypto.getRandomValues(r);const j=r[0]%(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+/* ---------- max flow (Dinic) ---------- */
+function flow(nv,edges,s,t){const g=Array.from({length:nv},()=>[]);const E=[];
+  edges.forEach(([u,v,c])=>{g[u].push(E.length);E.push({v,c});g[v].push(E.length);E.push({v:u,c:0});});
+  let f=0;const lvl=new Array(nv),it=new Array(nv);
+  const bfs=()=>{lvl.fill(-1);lvl[s]=0;const q=[s];while(q.length){const u=q.shift();for(const id of g[u]){const e=E[id];if(e.c>0&&lvl[e.v]<0){lvl[e.v]=lvl[u]+1;q.push(e.v);}}}return lvl[t]>=0;};
+  const dfs=(u,p)=>{if(u===t)return p;for(;it[u]<g[u].length;it[u]++){const id=g[u][it[u]],e=E[id];if(e.c>0&&lvl[e.v]===lvl[u]+1){const d=dfs(e.v,Math.min(p,e.c));if(d>0){e.c-=d;E[id^1].c+=d;return d;}}}return 0;};
+  while(bfs()){it.fill(0);let d;while((d=dfs(s,1e9))>0)f+=d;}
+  return {f,g,E};}
+
+/* feasibility: can every remaining player still get a team on a night she can make, with tier quotas and team sizes respected? */
+function feasible(teams,rem,tierOf,quota,depth){depth=depth||0;const {base,E}=plan();
+  /* level 1 (quota falsy): every girl placed, on a night she can make, legal team sizes, linked pairs together.
+     level 2 (quota true): level 1 plus each team's A and C counts. */
+  let used=0;teams.forEach(t=>{if(t.players.length>base)used++;});
+  if(used>E||teams.some(t=>t.players.length>base+(E>0?1:0)))return {ok:false,unmatched:[...rem]};
+  const nP=rem.length,nT=teams.length,K=quota?3:1,tiers=['A','C','B'];
+  const S0=0,P0=1,TT0=P0+nP,TM0=TT0+K*nT,X=TM0+nT,SNK=X+1;const ed=[],src=[],pe=[];
+  rem.forEach((b,i)=>{src[i]=ed.length;ed.push([S0,P0+i,1]);const ti=quota?tiers.indexOf(tierOf(b)):0;pe[i]=[];
+    teams.forEach((t,j)=>{if(nightsOf(b).includes(t.night)){pe[i].push([ed.length,j]);ed.push([P0+i,TT0+K*j+ti,1]);}});});
+  teams.forEach((t,j)=>{if(quota){ed.push([TT0+3*j,TM0+j,Math.max(0,t.qA-t.a)]);ed.push([TT0+3*j+1,TM0+j,Math.max(0,t.qC-t.c)]);ed.push([TT0+3*j+2,TM0+j,999]);}
+    else ed.push([TT0+j,TM0+j,999]);
+    const n=t.players.length;ed.push([TM0+j,SNK,Math.max(0,base-n)]);if(E>0&&n<base+1)ed.push([TM0+j,X,1]);});
+  ed.push([X,SNK,Math.max(0,E-used)]);
+  const r=flow(SNK+1,ed,S0,SNK);
+  const unmatched=rem.filter((b,i)=>r.E[2*src[i]].c>0);
+  if(r.f!==nP)return {ok:false,unmatched};
+  const asg={};rem.forEach((b,i)=>{const e=pe[i].find(([k])=>r.E[2*k].c===0);asg[b]=e?e[1]:-1;});
+  const inRem=new Set(rem);
+  const split=rem.find(b=>LINK[b]&&inRem.has(LINK[b])&&b<LINK[b]&&asg[b]!==asg[LINK[b]]);
+  if(split===undefined)return {ok:true,unmatched:[]};
+  if(depth>8)return {ok:true,unmatched:[]};
+  const s2=LINK[split],both=[split,s2];
+  for(let j=0;j<nT;j++){const t=teams[j];if(!both.every(x=>nightsOf(x).includes(t.night)))continue;
+    if(quota){const na=t.a+both.filter(e=>tierOf(e)==='A').length,nc=t.c+both.filter(e=>tierOf(e)==='C').length;if(na>Math.max(t.qA,t.a)||nc>Math.max(t.qC,t.c))continue;}
+    const tt=teams.map(x=>x===t?{...x,players:[...x.players,...both.map(e=>({bib:e}))],a:x.a+both.filter(e=>tierOf(e)==='A').length,c:x.c+both.filter(e=>tierOf(e)==='C').length}:x);
+    if(feasible(tt,rem.filter(x=>!both.includes(x)),tierOf,quota,depth+1).ok)return {ok:true,unmatched:[]};}
+  return {ok:false,unmatched:both};}
+
+/* ---------- A & C lists ---------- */
+function computeLists(){const t=T(),st={};ALL.forEach(b=>st[b]={A:0,AB:0,C:0});
+  Object.values(S.grades).forEach(g=>{(g.A||[]).forEach(b=>st[b]&&st[b].A++);(g.AB||[]).forEach(b=>st[b]&&st[b].AB++);(g.C||[]).forEach(b=>st[b]&&st[b].C++);});
+  const pts=b=>2*st[b].A+st[b].AB, cov=b=>st[b].A+st[b].AB;
+  const aNom=ALL.filter(b=>cov(b)>0).sort((x,y)=>cov(y)-cov(x)||st[y].A-st[x].A||pts(y)-pts(x)||x-y);
+  let kA=Math.floor(aNom.length/t),flags=[];if(kA<1){kA=0;flags.push(`Only ${aNom.length} A nominees for ${t} teams. Not enough for one per team.`);}
+  let A=aNom.slice(0,kA*t),cutA=aNom.slice(kA*t);
+  if(A.length&&cutA.length){const l=A[A.length-1],c=cutA[0];if(cov(l)===cov(c)&&st[l].A===st[c].A&&pts(l)===pts(c)){
+    flags.push({tie:true,kept:l,cut:c});if(S.tieSwap){A[A.length-1]=c;cutA[0]=l;}}}
+  const exp=b=>(+PL[b].rec||0)+(+PL[b].trav||0);
+  const cNom=ALL.filter(b=>st[b].C>0&&!A.includes(b)).sort((x,y)=>st[y].C-st[x].C||exp(x)-exp(y)||x-y);
+  const kC=Math.floor(cNom.length/t);let C=cNom.slice(0,kC*t),cutC=cNom.slice(kC*t);const cNotes=[];
+  if(C.length&&cutC.length){const l=C[C.length-1],c=cutC[0];if(st[l].C===st[c].C)cNotes.push(exp(l)===exp(c)?`#${l} and #${c} tied on C’s and experience; tool kept #${l}.`:`#${l} kept over #${c} (same C count, less experience).`);}
+  const bumps=[];S.noShow.forEach(({bib,tier})=>{const L=tier==='A'?A:C;if(L.includes(bib))return;const out=L.pop();L.unshift(bib);bumps.push({bib,tier,out});});
+  return {st,aNom,cNom,A,C,cutA,cutC,kA,kC,flags,cNotes,bumps,pts,cov};}
+
+/* ---------- draft engine (replays picks so undo is exact) ---------- */
+function tierFn(L){return b=>L.A.includes(b)?'A':L.C.includes(b)?'C':'B';}
+function sim(){EXTRA={};const L=computeLists(),tierOf=tierFn(L),{base,max}=plan();
+    const teams=S.order.map(n=>({name:n,night:S.coaches[n].night,players:[],a:0,c:0,qA:L.kA,qC:L.kC,owed:0,pre:[]}));
+  const und=new Set(ALL);const log=[];let notes=[];const placed=[];
+  const add=(t,b,how)=>{t.players.push({bib:b,how});const tr=tierOf(b);if(tr==='A')t.a++;if(tr==='C')t.c++;und.delete(b);};
+  teams.forEach(t=>{(S.coaches[t.name].daughters||[]).forEach(d=>{if(PL[d]&&und.has(d)){add(t,d,'daughter');t.pre.push(d);const s=LINK[d];if(s&&und.has(s)){add(t,s,'linked');t.pre.push(s);}}});});
+  const finalA=L.kA>0?((L.kA-1)%2===0?[...teams]:[...teams].reverse()):[];let bFirst=[],bLast=[];
+  /* excess rules (runbook 11): a team holding more A's or C's than its quota before the first pick */
+  function rebalance(){teams.forEach(t=>{t.qA=L.kA;t.qC=L.kC;});bFirst=[];bLast=[];notes=[];
+    teams.filter(t=>t.a>L.kA).forEach(x=>{const ex=x.a-L.kA;x.qA=x.a;x.qC=L.kC>0?L.kC+ex:0;bLast.push(x.name);
+      for(let k=0;k<ex;k++){const d=[...finalA].reverse().find(t=>t.a<L.kA&&t.qA===L.kA);if(d){d.qA=L.kA-1;d.qC=Math.max(0,L.kC-1);bFirst.push(d.name);
+        notes.push(L.kC>0?`${x.name} holds ${x.a} A’s before the first pick. ${d.name} will not receive one: ${d.name} picks first in the first B round and takes one fewer C; ${x.name} takes one extra C and picks last.`:`${x.name} holds ${x.a} A’s before the first pick. ${d.name} will not receive one: ${d.name} picks first in the first B round and ${x.name} picks last. (There is no C list, so there are no C’s to shift.)`);}}});
+    teams.filter(t=>t.c>t.qC).forEach(x=>{const ex=x.c-x.qC;x.qC=x.c;bFirst.push(x.name);
+      for(let k=0;k<ex;k++){const d=[...teams].reverse().find(t=>t.c<t.qC&&t!==x);if(d){d.qC--;bLast.push(d.name);notes.push(`${x.name} holds an extra C before the first pick; ${x.name} picks first in the first B round and ${d.name} picks last.`);}}});}
+  rebalance();
+  /* availability beats tier balance (runbook 11): an A or C who can't fit her tier anywhere goes to a team she can make */
+  const fits=(b,t)=>[b,LINK[b]].filter(x=>x&&und.has(x)).every(x=>nightsOf(x).includes(t.night));
+  let balanceOk=true;
+  for(let k=0;k<20;k++){const rem=[...und];if(feasible(teams,rem,tierOf,true).ok)break;
+    const f2=feasible(teams,rem,tierOf,true);
+    if(!feasible(teams,rem,tierOf,false).ok){balanceOk=false;break;}
+    const cand=f2.unmatched.filter(b=>tierOf(b)!=='B').sort((x,y)=>teams.filter(t=>fits(x,t)).length-teams.filter(t=>fits(y,t)).length||x-y);
+    let done=false;
+    for(const b of cand){const tr=tierOf(b);const over=t=>tr==='A'?t.a-t.qA:t.c-t.qC;
+      const os=teams.filter(t=>fits(b,t)).sort((p,q)=>over(p)-over(q)||teams.indexOf(q)-teams.indexOf(p));
+      for(const t of os){const extra=[b,LINK[b]].filter(x=>x&&und.has(x));
+        const tt=teams.map(x=>x===t?{...x,players:[...x.players,...extra.map(e=>({bib:e}))]}:x);
+        if(!feasible(tt,rem.filter(r=>!extra.includes(r)),tierOf,false).ok)continue;
+        extra.forEach(e=>{add(t,e,e===b?'availability':'linked');t.pre.push(e);});
+        placed.push({b,t,tr,only:teams.filter(x=>fits2(b,x)).length===1});done=true;break;}
+      if(done)break;}
+    if(!done){balanceOk=false;break;}
+    rebalance();}
+  function fits2(b,t){return nightsOf(b).includes(t.night);}
+  const brokenNotes=BROKEN.map(p=>`Link #${p.a}/#${p.b} can’t be kept (${p.why}). They are drafted separately so each gets a team she can make.`);
+  const lead=placed.map(p=>`#${p.b} ${nm(p.b)} (${p.tr}) goes to ${p.t.name} before the first pick: ${p.only?`${p.t.name} is the only team that practices on a night she can make`:`no team she can make has a ${p.tr} spot left`}. Availability comes before A/C balance.`);
+  notes=[...brokenNotes,...lead,...notes];
+  if(!balanceOk&&!placed.length&&!feasible(teams,[...und],tierOf,true).ok)notes.push('A/C balance can’t be kept for every team with these lists. Every player will still be placed on a night she can make.');
+  const RA=Math.max(0,...teams.map(t=>t.qA-t.a)),RC=Math.max(0,...teams.map(t=>t.qC-t.c));
+  const tierOfRound=r=>r<RA?'A':r<RA+RC?'C':'B';
+  const orderOf=r=>{let o=r%2===0?[...teams]:[...teams].reverse();if(r===RA+RC&&(bFirst.length||bLast.length)){
+    o=[...o.filter(t=>bFirst.includes(t.name)),...o.filter(t=>!bFirst.includes(t.name)&&!bLast.includes(t.name)),...o.filter(t=>bLast.includes(t.name))];}return o;};
+  const need=(t,tr)=>tr==='A'?t.qA-t.a:tr==='C'?t.qC-t.c:max-t.players.length;
+  const eligOf=tr=>[...und].filter(b=>tr==='B'||tierOf(b)===tr);
+  const fitsT=(b,t)=>[b,LINK[b]].filter(x=>x&&und.has(x)).every(x=>nightsOf(x).includes(t.night));
+  const viable=(b,tr)=>teams.filter(t=>need(t,tr)>0&&fitsT(b,t));
+  function test(t,b,q){const rem=[...und];const extra=[b];if(LINK[b]&&und.has(LINK[b]))extra.push(LINK[b]);
+    if(q){const na=t.a+extra.filter(e=>tierOf(e)==='A').length,nc=t.c+extra.filter(e=>tierOf(e)==='C').length;if(na>Math.max(t.qA,t.a)||nc>Math.max(t.qC,t.c))return false;}
+    const tt=teams.map(x=>x===t?{...x,players:[...x.players,...extra.map(e=>({bib:e}))],a:x.a+extra.filter(e=>tierOf(e)==='A').length,c:x.c+extra.filter(e=>tierOf(e)==='C').length}:x);
+    return feasible(tt,rem.filter(r=>!extra.includes(r)),tierOf,q).ok;}
+  /* what happens if team t takes b, optionally with a family-confirmed night: 'ok', 'soft' (A/C balance only) or 'hard' (a girl left without a team) */
+  function canTake(t,b,night){const keep=JSON.stringify(EXTRA);if(night)[b,LINK[b]].filter(Boolean).forEach(x=>{EXTRA[x]=[...(EXTRA[x]||[]),night];});
+    let res;const rem=[...und];const lv2=feasible(teams,rem,tierOf,true).ok;
+    if(!fitsT(b,t))res='hard';else if(lv2&&test(t,b,true))res='ok';else if(test(t,b,false))res=lv2?'soft':'ok';else res='hard';
+    EXTRA=JSON.parse(keep);return res;}
+  function analyze(t,tr,quick){const rem=[...und];const elig=eligOf(tr);
+    const nightOk=elig.filter(b=>fitsT(b,t));
+    const lv2=feasible(teams,rem,tierOf,true).ok;const lv1=lv2||feasible(teams,rem,tierOf,false).ok;
+    if(quick){/* replaying earlier picks: only whether this team picks or is skipped matters */
+      const q=lv2?true:lv1?false:null;const any=q===null?nightOk.length>0:nightOk.some(b=>test(t,b,q));return {kind:any?'ok':'skip'};}
+    let allowed,soft=[];
+    if(lv2){allowed=nightOk.filter(b=>test(t,b,true));soft=nightOk.filter(b=>!allowed.includes(b)&&test(t,b,false));}
+    else if(lv1)allowed=nightOk.filter(b=>test(t,b,false));
+    else allowed=nightOk;
+    const blocked=nightOk.filter(b=>!allowed.includes(b));
+    const open=teams.filter(x=>need(x,tr)>0).length;const scarce=open>1?allowed.map(b=>({b,v:viable(b,tr)})).filter(o=>o.v.length===1):[];
+    let kind='ok',msg='Open pick.';
+    if(!allowed.length){kind='skip';}
+    else if(allowed.length===1&&elig.length>1){kind='must';const a=allowed[0];msg=`Must pick #${a} ${nm(a)}. `+(viable(a,tr).length===1?'She has no other possible team.':'Any other pick leaves a player with no team.');}
+    else if(blocked.length&&allowed.length<=4){kind='must';msg=allowed.length===1?`Must pick #${allowed[0]} ${nm(allowed[0])}. Any other pick leaves a player with no team.`:`Must pick one of ${allowed.map(b=>'#'+b).join(', ')}. Any other pick leaves a player with no team.`;}
+    else if(blocked.length){kind='must';msg=`Any pick except ${blocked.map(b=>'#'+b).join(', ')}. Those picks would leave another player with no team.`;}
+    else if(scarce.length){kind='should';const o=scarce[0];msg=`Recommend #${o.b} ${nm(o.b)}. ${t.name} is the only team left that fits her nights; pass now and she likely becomes a must-pick next turn.`;}
+    const level=lv2?2:lv1?1:0;
+    return {elig,nightOk,allowed,blocked,soft,kind,msg,scarce:scarce.map(o=>o.b),level,degraded:level===0?feasible(teams,rem,tierOf,false).unmatched:false};}
+  let r=0,pos=0,cur=null,guard=0,lastPickR=-1;
+  function advance(quick){while(und.size){if(++guard>5000)return null;const o=orderOf(r);if(pos>=o.length){r++;pos=0;if(r>RA+RC&&r-lastPickR>2)return null;continue;}
+      const t=o[pos],tr=tierOfRound(r);
+      if(need(t,tr)<=0){pos++;continue;}
+      if(!eligOf(tr).length){pos++;continue;}
+      if(tr==='B'&&t.owed>0){t.owed--;log.push({k:'skip',t:`${t.name} — pick used by linked player`});pos++;continue;}
+      const an=analyze(t,tr,quick);if(an.kind==='skip'){log.push({k:'skip',t:`${t.name} skipped — no remaining ${tr==='B'?'player':tr} can go to ${t.name} without leaving another player with no team`});pos++;continue;}
+      return {r,pos,t,tr,an,overall:log.filter(l=>l.k==='pick').length+1};}
+    return null;}
+  placed.forEach(p=>log.push({k:'pre',t:`Before the draft: #${p.b} ${nm(p.b)} (${p.tr}) placed on ${p.t.name} for availability`}));
+  for(const p of S.picks){cur=advance(true);if(!cur)break;
+    if(p.night)[p.bib,LINK[p.bib]].filter(Boolean).forEach(x=>{EXTRA[x]=[...(EXTRA[x]||[]),p.night];});
+    add(cur.t,p.bib,'pick');lastPickR=cur.r;log.push({k:'pick',t:`${cur.t.name} took #${p.bib} ${nm(p.bib)} (${tierOf(p.bib)})${p.force?' — kept over A/C balance':''}${p.night?' — availability confirmed '+NN[p.night]:''}`});
+    const s=LINK[p.bib];if(s&&und.has(s)){add(cur.t,s,'linked');if(tierOf(s)==='B')cur.t.owed++;log.push({k:'link',t:`#${s} ${nm(s)} joins ${cur.t.name} (linked player) — counts as their next ${tierOf(s)} pick`});}
+    pos=cur.pos+1;r=cur.r;}
+  cur=advance();
+  return {L,tierOf,teams,und,log,notes,cur,orderOf,tierOfRound,need,canTake,placed};}
+
+/* ---------- rendering ---------- */
+function nav(){$('#divname').textContent=DATA?`${DATA.division} · ${ALL.length} players · bibs ${Math.min(...ALL)}–${Math.max(...ALL)}`:'';
+  if(SCREEN!=='div'){$('#steps').innerHTML='';return;}
+  const ok=i=>i<=1||(i===2&&!!S.order)||(i>=3&&gradesDone());
+  $('#steps').innerHTML=STEPS.map((s,i)=>`<button class="${S.step===i?'on':''}" ${ok(i)?'':'disabled'} onclick="go(${i})">${s}</button>`).join('')+`<button onclick="changeDivision()">Change division</button><button onclick="resetAll()">Start over</button>`;}
+function go(i){S.step=i;save();render();}
+function resetAll(){if(confirm(`Clear everything entered for ${DATA.division} on this device (check-in changes, draft order, grades and picks) and start over?`)){S=fresh(BASE);applyCI();save();render();}}
+function changeDivision(){SCREEN='pick';try{sessionStorage.removeItem('cggbl-div')}catch(e){}render();}
+function gradesDone(){return S.order&&S.gIdx>=S.order.length*3;}
+function render(){nav();if(SCREEN==='gate')return gate();if(SCREEN==='pick')return picker();if(SCREEN==='confirm')return confirmDiv();
+  [checkin,setup,grades,lists,draft,rosters][S.step]();window.scrollTo(0,0);}
+
+/* ---------- unlock ---------- */
+const b64=t=>Uint8Array.from(atob(t),c=>c.charCodeAt(0));
+async function decrypt(pass){const km=await crypto.subtle.importKey('raw',new TextEncoder().encode(pass),'PBKDF2',false,['deriveKey']);
+  const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b64(ENC.salt),iterations:ENC.iter,hash:'SHA-256'},km,{name:'AES-GCM',length:256},false,['decrypt']);
+  const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64(ENC.iv)},key,b64(ENC.ct));return JSON.parse(new TextDecoder().decode(pt));}
+function gate(){$('#app').innerHTML=`<img class="gatelogo" src="${LOGO}" alt="Center Grove Basketball"><section class="panel narrow"><h2>Unlock draft night</h2><p class="sub">Enter the passphrase from the commissioner.</p>
+  <div class="row"><input id="pw" type="password" autocomplete="current-password" style="flex:1;min-width:220px" aria-label="Passphrase"><button class="primary" onclick="unlock()">Unlock</button></div><div class="err" id="gwerr"></div></section>`;
+  const p=$('#pw');p.focus();p.onkeydown=e=>{if(e.key==='Enter')unlock();};}
+async function unlock(pass){const quiet=!!pass;pass=pass||$('#pw').value;if(!pass)return;
+  if(!crypto.subtle){$('#gwerr').textContent='This browser can’t open the data. Use the site’s https:// address in Chrome, Safari, Edge or Firefox.';return;}
+  try{BUNDLE=await decrypt(pass);}catch(e){if(quiet){try{sessionStorage.removeItem('cggbl-pass')}catch(_){};return gate();}$('#gwerr').textContent='That passphrase didn’t unlock the data. Check it with the commissioner.';return;}
+  try{sessionStorage.setItem('cggbl-pass',pass)}catch(e){}
+  let last=null;try{last=sessionStorage.getItem('cggbl-div')}catch(e){}
+  const i=BUNDLE.divisions.findIndex(d=>d.division===last);
+  if(i>=0){const sv=loadKey(keyFor(BUNDLE.divisions[i]));if(sv&&sv.hash===baseHash(BUNDLE.divisions[i])){openDivision(i,sv);return;}}
+  SCREEN='pick';render();}
+
+/* ---------- choose a division ---------- */
+function progressOf(d){const sv=loadKey(keyFor(d));if(!sv)return null;if(sv.hash!==baseHash(d))return {stale:true};
+  return {stale:false,picks:sv.picks.length,grades:Object.keys(sv.grades).length,order:!!sv.order,ci:sv.ciDone,sv};}
+function picker(){DATA=null;nav();const opts=BUNDLE.divisions.map((d,i)=>`<option value="${i}" ${PICKED===i?'selected':''}>${esc(d.division)}</option>`).join('');
+  $('#app').innerHTML=`<section class="panel narrow"><h2>Which division are you drafting?</h2><p class="sub">${esc(BUNDLE.season)} · data loaded ${esc(BUNDLE.built)}</p>
+  <div class="row"><select id="dsel" style="flex:1;min-width:220px" aria-label="Division"><option value="">Choose a division…</option>${opts}</select><button class="primary" onclick="pickDiv()">Continue</button></div><div class="err" id="perr2"></div></section>`;}
+function pickDiv(){const v=$('#dsel').value;if(v===''){$('#perr2').textContent='Choose a division first.';return;}PICKED=+v;SCREEN='confirm';render();}
+const nightsList=d=>[...new Set(d.coaches.map(c=>c.night))];
+function confirmDiv(){const d=BUNDLE.divisions[PICKED];const bibs=d.players.map(p=>p.bib);const pr=progressOf(d);DATA=null;nav();
+  let st='',btn='';
+  if(!pr)btn=`<button class="primary" onclick="startDiv(false)">Start check-in</button>`;
+  else if(pr.stale){st=`<div class="note must">This device has a saved draft for ${esc(d.division)}, but the commissioner has updated the division since it was started. The saved work can’t be used with the new data.</div>`;
+    btn=`<button class="primary" onclick="startDiv(true)">Start fresh with the updated data</button>`;}
+  else{st=`<div class="note">This device already has ${esc(d.division)} in progress: ${pr.ci?'check-in done':'check-in not finished'}, ${pr.order?'order drawn':'order not drawn'}, ${pr.grades} of ${d.coaches.length} coaches’ grades, ${pr.picks} picks.</div>`;
+    btn=`<button class="primary" onclick="startDiv(false)">Resume</button><button class="ghost" onclick="startDiv(true)">Start over</button>`;}
+  $('#app').innerHTML=`<section class="panel narrow"><h2>${esc(d.division)}</h2><p class="sub">Check this is the division in the gym tonight.</p>
+   <table><tr><th>Players</th><td>${d.players.length} (bibs ${Math.min(...bibs)}–${Math.max(...bibs)})</td></tr><tr><th>Teams</th><td>${d.coaches.length}</td></tr>
+   <tr><th>Head coaches</th><td>${d.coaches.map(c=>`${esc(c.name)} (${NN[c.night]})`).join(', ')}</td></tr></table>${st}
+   <div class="row" style="margin-top:16px">${btn}<button class="ghost" onclick="SCREEN='pick';render()">Back</button></div></section>`;}
+function startDiv(wipe){const d=BUNDLE.divisions[PICKED];let sv=loadKey(keyFor(d));
+  if(wipe){if(sv&&!sv.stale&&sv.hash===baseHash(d)&&!confirm(`Clear everything entered for ${d.division} on this device and start over?`))return;sv=null;}
+  if(sv&&sv.hash!==baseHash(d))sv=null;openDivision(PICKED,sv);}
+function openDivision(i,sv){BASE=BUNDLE.divisions[i];DKEY=keyFor(BASE);S=sv||fresh(BASE);applyCI();SCREEN='div';
+  try{sessionStorage.setItem('cggbl-div',BASE.division)}catch(e){}save();render();}
+
+/* ---------- check-in ---------- */
+const daughterOf=b=>Object.keys(S.coaches).find(n=>(S.coaches[n].daughters||[]).includes(b));
+function checkin(){const locked=S.picks.length>0;const ch=Object.keys(S.ci.nights).map(Number).sort((a,b)=>a-b);
+  const unconf=ALL.filter(b=>!PL[b].confirmed);
+  const linkRows=(DATA.links||[]).map(([a,b])=>{const mine=S.ci.links.some(l=>l[0]===a&&l[1]===b);return `<tr><td>#${a} ${esc(nm(a))}</td><td>#${b} ${esc(nm(b))}</td><td>${mine?(locked?'added at check-in':`<button class="ghost" onclick="rmLink(${a},${b})">Remove</button>`):'<span class="muted">set at registration</span>'}</td></tr>`;}).join('');
+  let h=`<section class="panel"><h2>Check-in changes</h2><p class="sub">Work top to bottom through all four sections: no-shows, linked players, availability, jersey sizes. Enter only what changed at check-in; everything else is already loaded.</p>
+   ${locked?`<div class="note should">The draft has started, so check-in changes are locked. For a night a family confirms mid-draft, use the override when that pick is entered.</div>`:''}</section>
+  <section class="panel"><h2>1. No-shows</h2><p class="sub">Players who didn’t check in. They become missed evals.</p>
+   ${locked?'':`<div class="row"><input id="abs" style="flex:1;min-width:200px" placeholder="Bibs, e.g. 12, 31" value="${S.absent.join(', ')}"><button class="primary" onclick="saveAbsent()">Save no-shows</button></div><div class="err" id="aerr"></div>`}
+   <p>${S.absent.length?S.absent.map(b=>`#${b} ${esc(nm(b))}`).join('<br>'):'<span class="muted">None</span>'}</p></section>
+  <section class="panel"><h2>2. Linked players (same team)</h2><p class="sub">Two players who must be on the same team, for any reason: sisters, step-sisters, cousins, neighbors, carpools. Both must be in this division and have the same availability (fix availability in section 3 first if needed). Drafting one places the other. An availability change for one applies to both.</p>
+   ${locked?'':`<div class="row"><input id="la" inputmode="numeric" placeholder="Bib" style="width:100px" aria-label="First linked player bib"><input id="lb" inputmode="numeric" placeholder="Bib" style="width:100px" aria-label="Second linked player bib"><button class="primary" onclick="addLink()">Link players</button></div><div class="err" id="lerr"></div>`}
+   ${linkRows?`<div class="scroll"><table>${linkRows}</table></div>`:'<p class="muted">None</p>'}</section>
+  <section class="panel"><h2>3. Availability changes</h2><p class="sub">Enter a bib, then tick every weeknight she can practice. Saving a change marks her confirmed.</p>
+   ${locked?'':`<div class="row"><input id="ab" inputmode="numeric" placeholder="Bib" style="width:110px" aria-label="Bib" value="${EDIT||''}"><button class="ghost" onclick="findBib()">Find player</button></div><div class="err" id="berr"></div>${EDIT?editor(EDIT):''}`}
+   ${ch.length?`<div class="scroll"><table><tr><th class="num">Bib</th><th>Player</th><th>Before</th><th>Now</th><th></th></tr>${ch.map(b=>`<tr><td class="num"><b>${b}</b></td><td>${esc(nm(b))}</td><td>${PL[b].prev.map(x=>NN[x]).join(', ')}${PL[b].prevConfirmed?'':' <span class="flag should">unconfirmed</span>'}</td><td>${PL[b].nights.map(x=>NN[x]).join(', ')}</td><td>${locked?'':`<button class="ghost" onclick="rmNights(${b})">Undo</button>`}</td></tr>`).join('')}</table></div>`:'<p class="muted">No changes yet.</p>'}
+   ${unconf.length?`<p style="margin-top:14px"><b>Still unconfirmed (${unconf.length}).</b> Ask these families at check-in:</p><div class="row">${unconf.map(b=>locked?`<span>#${b} ${esc(nm(b))}</span>`:`<button class="ghost" onclick="EDIT=${b};render()">#${b} ${esc(nm(b))}</button>`).join('')}</div><p class="muted">Anyone left here stays available all five nights, marked unconfirmed.</p>`:'<p class="ok-txt">Every player’s availability is confirmed.</p>'}</section>`;
+  h+=sizeSection();
+  h+=nightCheck();
+  h+=`<p><button class="primary" onclick="S.ciDone=true;go(1)">Check-in done: go to draft order</button></p><p class="muted">Data loaded ${esc(BUNDLE.built)} · version ${S.hash}</p>`;
+  $('#app').innerHTML=h;const ab=$('#ab');if(ab)ab.onkeydown=e=>{if(e.key==='Enter')findBib();};const jb=$('#jb');if(jb)jb.onkeydown=e=>{if(e.key==='Enter')findSize();};}
+function editor(b){const cur=PL[b].nights;return `<div class="note" style="margin-top:12px"><b>#${b} ${esc(nm(b))}</b> <span class="muted">· registration said “${esc(PL[b].raw||'')}”${PL[b].confirmed?'':' (unconfirmed)'}</span>
+  <div class="row" style="margin-top:10px">${NIGHTS.map(x=>`<label class="nt"><input type="checkbox" class="nck" value="${x}" ${cur.includes(x)?'checked':''}> ${NL[x]}</label>`).join('')}</div>
+  <div class="row" style="margin-top:10px"><button class="primary" onclick="saveNights(${b})">Save change</button><button class="ghost" onclick="EDIT=null;render()">Cancel</button></div><div class="err" id="nerr"></div></div>`;}
+function findBib(){const b=+$('#ab').value;if(!PL[b]){$('#berr').textContent=`#${$('#ab').value} isn’t in ${DATA.division}.`;return;}EDIT=b;render();}
+function saveNights(b){const v=[...document.querySelectorAll('.nck:checked')].map(x=>x.value);if(!v.length){$('#nerr').textContent='Tick at least one night.';return;}
+  const p=LINK[b];if(p){const kb=PL[b].nights,kp=PL[p].nights;PL[b].nights=v;PL[p].nights=v;const why=linkProblem(b,p);PL[b].nights=kb;PL[p].nights=kp;
+    if(why){$('#nerr').textContent=`#${b} is linked with #${p} ${nm(p)}: ${why}. Call the commissioner.`;return;}
+    const bp=BASE.players.find(x=>x.bib===p);if(bp.confirmed&&v.length===bp.nights.length&&v.every(x=>bp.nights.includes(x)))delete S.ci.nights[p];else S.ci.nights[p]=v;}
+  const base=BASE.players.find(p=>p.bib===b);if(base.confirmed&&v.length===base.nights.length&&v.every(x=>base.nights.includes(x)))delete S.ci.nights[b];else S.ci.nights[b]=v;
+  EDIT=null;applyCI();save();render();}
+function rmNights(b){delete S.ci.nights[b];applyCI();save();render();}
+/* jersey sizes: never affect the draft, so they stay open after the first pick */
+let SEDIT=null;
+function sizeSection(){const ch=Object.keys(S.ci.sizes).map(Number).sort((a,b)=>a-b);
+  return `<section class="panel"><h2>4. Jersey size changes</h2><p class="sub">Each player confirms her jersey size at check-in. Enter a bib only if the size changed. Sizes go on the rosters and into the jersey order.${S.picks.length?' This section stays open during the draft; it doesn’t affect picks.':''}</p>
+   <div class="row"><input id="jb" inputmode="numeric" placeholder="Bib" style="width:110px" aria-label="Bib for jersey size" value="${SEDIT||''}"><button class="ghost" onclick="findSize()">Change size</button></div><div class="err" id="jerr"></div>
+   ${SEDIT?`<div class="note" style="margin-top:12px"><b>#${SEDIT} ${esc(nm(SEDIT))}</b> <span class="muted">· registered ${esc(PL[SEDIT].regSize||'no size')}${S.ci.sizes[SEDIT]?`, changed to ${esc(PL[SEDIT].size)}`:''}</span>
+     <div class="row" style="margin-top:10px"><select id="jsel" aria-label="New jersey size">${SIZES.map(x=>`<option ${x===PL[SEDIT].size?'selected':''}>${x}</option>`).join('')}</select><button class="primary" onclick="saveSize(${SEDIT})">Save size</button><button class="ghost" onclick="SEDIT=null;render()">Cancel</button></div></div>`:''}
+   ${ch.length?`<div class="scroll"><table><tr><th class="num">Bib</th><th>Player</th><th>Registered</th><th>Now</th><th></th></tr>${ch.map(b=>`<tr><td class="num"><b>${b}</b></td><td>${esc(nm(b))}</td><td>${esc(PL[b].regSize||'—')}</td><td><b>${esc(PL[b].size)}</b></td><td><button class="ghost" onclick="rmSize(${b})">Undo</button></td></tr>`).join('')}</table></div>`:'<p class="muted">No size changes yet.</p>'}</section>`;}
+function findSize(){const b=+$('#jb').value;if(!PL[b]){$('#jerr').textContent=`#${$('#jb').value} isn’t in ${DATA.division}.`;return;}SEDIT=b;render();}
+function saveSize(b){const v=$('#jsel').value;if(v===PL[b].regSize)delete S.ci.sizes[b];else S.ci.sizes[b]=v;SEDIT=null;applyCI();save();render();}
+function rmSize(b){delete S.ci.sizes[b];applyCI();save();render();}
+function sizeCounts(bibs){const c={};bibs.forEach(b=>{const k=sz(b);c[k]=(c[k]||0)+1;});return [...SIZES,'size not on file'].filter(k=>c[k]).map(k=>`${c[k]} ${k}`).join(' · ');}
+function saveAbsent(){const v=[...new Set(nums($('#abs').value))].sort((a,b)=>a-b);const bad=v.filter(b=>!PL[b]);
+  if(bad.length){$('#aerr').textContent=`Not in ${DATA.division}: ${bad.join(', ')}.`;return;}
+  const graded=v.filter(b=>Object.values(S.grades).some(g=>['A','AB','C'].some(k=>(g[k]||[]).includes(b))));
+  if(graded.length){$('#aerr').textContent=`Already graded by a coach, so not a no-show: ${graded.join(', ')}.`;return;}
+  S.absent=v;S.noShow=S.noShow.filter(x=>v.includes(x.bib));save();render();}
+function addLink(){const a=+$('#la').value,b=+$('#lb').value,err=m=>$('#lerr').textContent=m;
+  if(!PL[a]||!PL[b])return err(`Both bibs must be in ${DATA.division}.`);if(a===b)return err('Enter two different bibs.');
+  if(LINK[a])return err(`#${a} is already linked with #${LINK[a]}. Groups of three aren’t supported; call the commissioner.`);
+  if(LINK[b])return err(`#${b} is already linked with #${LINK[b]}. Groups of three aren’t supported; call the commissioner.`);
+  const da=daughterOf(a),db=daughterOf(b);if(da&&db&&da!==db)return err(`#${a} and #${b} are daughters of different coaches (${da}, ${db}). Call the commissioner.`);
+  if(da&&db)return err(`#${a} and #${b} are both on ${da}’s team already.`);
+  const used=[...new Set(coachNames().map(n=>S.coaches[n].night))];const common=used.filter(x=>nightsOf(a).includes(x)&&nightsOf(b).includes(x));
+  const same=nightsOf(a).length===nightsOf(b).length&&nightsOf(a).every(x=>nightsOf(b).includes(x));
+  if(!same)return err(`Linked players must have the same availability. #${a} listed ${nightsOf(a).map(x=>NL[x]).join(', ')}; #${b} listed ${nightsOf(b).map(x=>NL[x]).join(', ')}. Update availability first, or call the commissioner.`);
+  if(!common.length)return err(`#${a} and #${b} can’t make any night a team practices. Call the commissioner.`);
+  const dd=da||db;if(dd&&!common.includes(S.coaches[dd].night))return err(`${dd}’s team practices ${NL[S.coaches[dd].night]}s, and #${da?b:a} can’t make ${NL[S.coaches[dd].night]}s. Call the commissioner.`);
+  S.ci.links.push([Math.min(a,b),Math.max(a,b)]);applyCI();save();render();}
+function rmLink(a,b){S.ci.links=S.ci.links.filter(l=>!(l[0]===a&&l[1]===b));applyCI();save();render();}
+
+function setup(){const {base,E,max}=plan();const o=S.order;
+  let h=`<section class="panel"><h2>Draft order</h2><p class="sub">Draw a random order for the ${T()} head coaches.</p>
+  <div class="row"><button class="primary" onclick="draw()">${o?'Redraw order':'Draw draft order'}</button>${o?'':`<span class="muted">${Object.keys(S.coaches).map(esc).join(', ')}</span>`}</div></section>`;
+  if(o){h+=`<section class="panel"><h2>Order, practice nights and coaches’ daughters</h2><p class="sub">Loaded by the commissioner. Daughters and their linked players are placed before the first pick.</p><div class="scroll"><table><tr><th class="num">Pick</th><th>Coach</th><th>Practice night</th><th>Daughters</th></tr>`+
+    o.map((n,i)=>{const c=S.coaches[n];const ds=(c.daughters||[]).filter(d=>PL[d]);return `<tr><td class="num">${i+1}</td><td><b>${esc(n)}</b>${c.assistant?`<br><span class="muted">Asst: ${esc(c.assistant)}</span>`:''}</td><td>${NL[c.night]}</td>
+    <td>${ds.length?ds.map(d=>`#${d} `+esc(nm(d))+(LINK[d]?` <span class="muted">+ linked #${LINK[d]}</span>`:'')).join('<br>'):'<span class="muted">none</span>'}</td></tr>`;}).join('')+`</table></div>
+    <p>Missed evals: ${S.absent.length?S.absent.map(b=>`#${b} ${esc(nm(b))}`).join(', '):'none'} <span class="muted">(change on the Check-in step)</span></p>
+    <p class="muted">Team plan: ${o.length} teams · ${E} of ${max}${E<o.length?`, ${o.length-E} of ${base}`:''}</p></section>`;
+    h+=nightCheck();h+=`<p><button class="primary" onclick="go(2)">Enter eval grades</button></p>`;}
+  $('#app').innerHTML=h;}
+function nightCheck(){const L={A:[],C:[]};const sm=sim0();const rem=[...sm.und];const res=feasible(sm.teams,rem,()=> 'B');
+  const used=[...new Set(coachNames().map(n=>S.coaches[n].night))];
+  const rows=NIGHTS.filter(d=>used.includes(d)).map(d=>{const ts=sm.teams.filter(t=>t.night===d);const open=ts.reduce((s,t)=>s+plan().max-t.players.length,0);
+    const can=rem.filter(b=>nightsOf(b).includes(d)).length;const only=rem.filter(b=>{const ok=nightsOf(b).filter(x=>used.includes(x));return ok.length===1&&ok[0]===d;});
+    return `<tr><td>${NL[d]}</td><td class="num">${ts.length}</td><td class="num">${open}</td><td class="num">${can}</td><td>${only.length?only.map(b=>`#${b} ${esc(nm(b))}`).join(', '):'<span class="muted">none</span>'}</td></tr>`;}).join('');
+  const none=rem.filter(b=>!nightsOf(b).some(x=>used.includes(x)));
+  const pairs=BROKEN;
+  return `<section class="panel"><h2>Schedule check</h2><p class="sub">Runs at registration close and again after check-in changes.</p><div class="scroll"><table><tr><th>Night</th><th class="num">Teams</th><th class="num">Open spots</th><th class="num">Players who can make it</th><th>Players who can only make this night</th></tr>${rows}</table></div>
+   ${res.ok&&!none.length&&!pairs.length?`<div class="note ok">A valid placement exists for every player.</div>`:`<div class="note must">${none.length?`No team practices on a night these players can make: ${none.map(b=>'#'+b).join(', ')}. `:''}${pairs.length?`These links can’t be kept: ${pairs.map(p=>`#${p.a}/#${p.b} (${p.why})`).join(', ')}. They will be drafted separately unless availability is fixed or the commissioner says otherwise. `:''}${!res.ok?`No valid placement for: ${res.unmatched.map(b=>'#'+b).join(', ')}.`:''}</div>`}</section>`;}
+function sim0(){const teams=coachNames().map(n=>({name:n,night:S.coaches[n].night,players:[],a:0,c:0,qA:0,qC:0}));const und=new Set(ALL);
+  teams.forEach(t=>{(S.coaches[t.name].daughters||[]).forEach(d=>{if(PL[d]&&und.has(d)){t.players.push({bib:d});und.delete(d);const s=LINK[d];if(s&&und.has(s)){t.players.push({bib:s});und.delete(s);}}});});return {teams,und};}
+function draw(){if(S.picks.length&&!confirm('A draft is in progress. Redraw the order and clear all picks?'))return;
+  S.order=shuffle(Object.keys(S.coaches));S.picks=[];save();render();}
+
+function grades(){const o=S.order,i=S.gIdx,kinds=['A','AB','C'],lbl={A:'A players',AB:'A/B or B+ players',C:'C players'};
+  let h=`<section class="panel">`;
+  if(!gradesDone()){const coach=o[Math.floor(i/3)],k=kinds[i%3];
+    h+=`<p class="muted">${S.gEdit?(S.gEdit==='one'?'Changing one list. Enter returns to the grade table.':`Re-entering ${esc(coach)}’s lists: A, then A/B, then C.`)+` <button class="ghost" onclick="S.gEdit=null;S.gIdx=S.order.length*3;save();render()">Cancel</button>`:`Coach ${Math.floor(i/3)+1} of ${o.length}`}</p><div class="big">Coach ${esc(coach)}, give me all your ${lbl[k]} in numerical order</div>
+    <div class="pickbox"><input id="gin" style="width:min(520px,100%);font-size:26px;text-align:left" placeholder="e.g. 47, 64, 72" value="${((S.grades[coach]||{})[k]||[]).join(', ')}"><button class="primary" onclick="saveGrade()">Enter</button></div>
+    <div class="err" id="gerr"></div><p class="muted">Leave blank and press Enter if the coach has none.</p>`;}
+  else h+=`<h2>All grades entered</h2><p class="sub">To change one list, click it in the table (for example, a coach’s C’s). To re-enter all three lists for a coach, click the coach’s name.</p><p><button class="primary" onclick="go(3)">Publish A & C lists</button></p>`;
+  h+=`${DATA.sample?`<p><button class="ghost" onclick="sampleGrades()">Load sample grades (demo)</button></p>`:''}</section><section class="panel"><div class="scroll"><table><tr><th>Coach</th><th>A</th><th>A/B or B+</th><th>C</th></tr>`+
+    o.map((c,ci)=>{const g=S.grades[c]||{};return `<tr><td><button class="ghost" title="Re-enter all three lists for ${esc(c)}" onclick="editGrades(${ci*3},'coach')">${esc(c)}</button></td>${kinds.map((k,ki)=>`<td><button class="ghost gcell" title="Change ${esc(c)}’s ${lbl[k]}" onclick="editGrades(${ci*3+ki},'one')">${g[k]?g[k].join(', ')||'—':'…'}</button></td>`).join('')}</tr>`;}).join('')+`</table></div></section>`;
+  $('#app').innerHTML=h;const gi=$('#gin');if(gi){gi.focus();gi.select();gi.onkeydown=e=>{if(e.key==='Enter')saveGrade();};}}
+function editGrades(i,mode){S.gIdx=i;S.gEdit=mode;save();render();}
+function saveGrade(){const o=S.order,i=S.gIdx,coach=o[Math.floor(i/3)],k=['A','AB','C'][i%3];const v=[...new Set(nums($('#gin').value))].sort((a,b)=>a-b);
+  const bad=v.filter(b=>!PL[b]),abs=v.filter(b=>S.absent.includes(b));const g=S.grades[coach]||{};
+  const dup=v.filter(b=>['A','AB','C'].filter(x=>x!==k).some(x=>(g[x]||[]).includes(b)));
+  if(bad.length)return $('#gerr').textContent=`Not on this roster: ${bad.join(', ')}`;
+  if(abs.length)return $('#gerr').textContent=`Missed evals: ${abs.join(', ')}. Those players are handled after the lists publish.`;
+  if(dup.length)return $('#gerr').textContent=`Already on another list for this coach: ${dup.join(', ')}`;
+  S.grades[coach]={...g,[k]:v};
+  if(S.gEdit==='one'){S.gEdit=null;S.gIdx=o.length*3;save();render();return;}
+  if(S.gEdit==='coach'){if(i%3<2){S.gIdx=i+1;}else{S.gEdit=null;S.gIdx=o.length*3;}save();render();return;}
+  S.gIdx=i+1;while(S.gIdx<o.length*3&&S.grades[o[Math.floor(S.gIdx/3)]]&&S.grades[o[Math.floor(S.gIdx/3)]][['A','AB','C'][S.gIdx%3]])S.gIdx++;save();render();}
+function sampleGrades(){if(!DATA.sample)return;S.order.forEach(c=>{if(DATA.sample[c])S.grades[c]=JSON.parse(JSON.stringify(DATA.sample[c]));});S.gIdx=S.order.every(c=>DATA.sample[c])?S.order.length*3:S.gIdx;save();render();}
+
+function lists(){const L=computeLists(),t=T();const gs=b=>{const s=L.st[b];return [s.A?`${s.A} A`:'',s.AB?`${s.AB} A/B`:'',s.C?`${s.C} C`:''].filter(Boolean).join(', ');};
+  const tie=L.flags.find(f=>f.tie);
+  let h=`<div class="grid2"><section class="panel"><h2>A list · ${L.A.length}</h2><div class="big" style="font-size:30px">${[...L.A].sort((x,y)=>x-y).join(', ')}</div><p class="sub">${L.aNom.length} players nominated (any A or A/B). ${L.kA} per team × ${t} teams = ${L.kA*t}.${L.cutA.length?` Cut ${L.cutA.length}: fewest coaches naming her, then fewest A’s, then points.`:''}</p>
+   ${L.flags.filter(f=>!f.tie).map(f=>`<div class="note must">${f}</div>`).join('')}
+   ${tie?`<div class="note should">Tie at the cut: #${tie.kept} and #${tie.cut} are identical on every tiebreaker. <button class="ghost" onclick="S.tieSwap=!S.tieSwap;save();render()">Swap them</button></div>`:''}
+   <div class="scroll"><table><tr><th class="num">Bib</th><th>Player</th><th>Grades</th><th class="num">Coaches</th><th class="num">Points</th><th></th></tr>${L.aNom.concat(L.bumps.filter(x=>x.tier==='A').map(x=>x.bib)).filter((b,i,a)=>a.indexOf(b)===i).sort((x,y)=>x-y).map(b=>{const inA=L.A.includes(b);const nb=L.bumps.find(x=>x.bib===b);const bo=L.bumps.find(x=>x.out===b);
+     return `<tr${inA?'':' class="muted"'}><td class="num"><b>${b}</b></td><td>${esc(nm(b))}</td><td>${nb?'Missed evals — coach confirmed A':gs(b)}</td><td class="num">${nb?'':L.cov(b)}</td><td class="num">${nb?'':L.pts(b)}</td><td>${inA?'<span class="tier A">A</span>':bo?'bumped to B':'cut'}</td></tr>`;}).join('')}</table></div></section>
+   <section class="panel"><h2>C list · ${L.C.length}</h2><div class="big" style="font-size:30px">${[...L.C].sort((x,y)=>x-y).join(', ')}</div><p class="sub">${L.cNom.length} players named C. ${L.kC} per team × ${t} teams = ${L.kC*t}.${L.cutC.length?' Cut by fewest C’s, then most experience.':''}</p>${L.kC<1?`<div class="note must">Only ${L.cNom.length} C nominee${L.cNom.length===1?'':'s'} for ${t} teams, so there is no C list and no C rounds. To change a coach’s C’s, go to Eval grades and click that coach’s C list. <button class="ghost" onclick="go(2)">Go to Eval grades</button></div>`:''}${L.cNotes.map(n=>`<div class="note">${n}</div>`).join('')}
+   <div class="scroll"><table><tr><th class="num">Bib</th><th>Player</th><th class="num">C’s</th><th class="num">Yrs exp</th><th></th></tr>${L.cNom.concat(L.bumps.filter(x=>x.tier==='C').map(x=>x.bib)).filter((b,i,a)=>a.indexOf(b)===i).sort((x,y)=>x-y).map(b=>{const inC=L.C.includes(b);const bo=L.bumps.find(x=>x.out===b);return `<tr${inC?'':' class="muted"'}><td class="num"><b>${b}</b></td><td>${esc(nm(b))}</td><td class="num">${L.st[b].C||'—'}</td><td class="num">${(+PL[b].rec||0)+(+PL[b].trav||0)}</td><td>${inC?'<span class="tier C">C</span>':bo?'bumped to B':'cut'}</td></tr>`;}).join('')}</table></div></section></div>`;
+  h+=`<section class="panel"><h2>Before the draft: players who missed evals</h2><p class="sub">Ask all coaches: is anyone who missed evals a definitive A or C?</p>
+   <p>${S.absent.map(b=>`#${b} ${esc(nm(b))}`).join(' · ')||'None'}</p><div class="row"><input id="ns" placeholder="e.g. 79 A" style="width:160px"><button class="ghost" onclick="addNS()">Add</button>${S.noShow.length?`<button class="ghost" onclick="S.noShow=[];save();render()">Clear</button>`:''}</div><div class="err" id="nserr"></div>
+   ${L.bumps.map(x=>`<div class="note">#${x.bib} ${esc(nm(x.bib))} added as ${x.tier}; #${x.out} ${esc(nm(x.out))} moves to B.</div>`).join('')}</section>`;
+  const sm=sim();h+=`<section class="panel"><h2>Starting position</h2><p class="sub">Coaches’ daughters, their linked players, and any player whose availability leaves only one place for her are placed before the first pick.</p>${sm.notes.map(n=>`<div class="note must">${esc(n)}</div>`).join('')}
+   <div class="scroll"><table><tr><th class="num">Pick</th><th>Coach</th><th>Night</th><th>Already on team</th><th>A’s needed</th><th>C’s needed</th></tr>${sm.teams.map((t,i)=>`<tr><td class="num">${i+1}</td><td><b>${esc(t.name)}</b></td><td>${NL[t.night]}</td><td>${t.pre.map(b=>{const p=t.players.find(x=>x.bib===b);return `<span class="tier ${sm.tierOf(b)}">${sm.tierOf(b)}</span> #${b} ${esc(nm(b))}${p&&p.how==='availability'?' <span class="muted">(availability)</span>':''}`;}).join('<br>')||'—'}</td><td>${t.qA-t.a}</td><td>${t.qC-t.c}</td></tr>`).join('')}</table></div>
+   <p><button class="primary" onclick="go(4)">Start the draft</button></p></section>`;
+  $('#app').innerHTML=h;}
+function addNS(){const v=$('#ns').value.trim().toUpperCase();const m=v.match(/^(\d+)\s*(A|C)$/);if(!m)return $('#nserr').textContent='Enter a bib and A or C, e.g. 79 A';
+  const b=+m[1];if(!S.absent.includes(b))return $('#nserr').textContent=`#${b} isn’t on the missed-evals list.`;S.noShow=S.noShow.filter(x=>x.bib!==b);S.noShow.push({bib:b,tier:m[2]});save();render();}
+
+let PENDING=null;
+function draft(){const sm=sim();const c=sm.cur;let h='';
+  if(!c){h+=`<section class="panel"><h2>Draft complete</h2><p class="sub">${sm.und.size?`${sm.und.size} players could not be placed: ${[...sm.und].map(b=>'#'+b).join(', ')}.`:'Every player is on a team.'}</p><p class="sharewarn">Next, a required step: send the results to the commissioner.</p><button class="primary" onclick="go(5)">View rosters and send results</button> <button class="ghost" onclick="undo()">Undo last pick</button></section>`;}
+  else{const t=c.t,an=c.an;const tierName={A:'A’s',C:'C’s',B:'B’s'}[c.tr];
+    h+=`<div class="clock"><section><div class="onclock"><div class="lbl">Round ${c.r+1} · ${tierName} · pick ${c.overall}</div><div class="who">${esc(t.name)}</div>
+      <div class="meta">${NL[t.night]} · A’s ${t.a} of ${t.qA} · C’s ${t.c} of ${t.qC} · roster ${t.players.length} of ${plan().max}</div></div>
+      ${an.level===0?`<div class="status must">Placement problem: ${an.degraded.map(b=>'#'+b).join(', ')} no longer fit any team. Undo the last pick or call the commissioner.</div>`:an.level===1?`<div class="status should">A/C balance can’t be kept for every team. Every player is still protected: each pick keeps a team for every girl.</div>`:''}
+      <div class="status ${an.kind}">${esc(an.msg)}</div>
+      <div class="pickbox"><input id="pin" inputmode="numeric" placeholder="Bib #" aria-label="Bib number"><button class="primary" onclick="pick()">Enter pick</button><button class="ghost" onclick="undo()" ${S.picks.length?'':'disabled'}>Undo</button></div><div class="err" id="perr"></div></section>
+      <section class="panel" style="margin:0"><h2>Available ${tierName}</h2><p class="sub">${an.elig.length} left · grayed players don’t fit ${NL[t.night]}</p><div class="scroll board"><table>${an.elig.sort((a,b)=>a-b).map(b=>{
+        const cls=!an.nightOk.includes(b)||an.blocked.includes(b)?'blocked':an.kind==='must'&&an.allowed.length<=4?'mand':an.scarce.includes(b)?'sugg':'allowed';
+        return `<tr class="${cls}"><td class="num"><b>${b}</b></td><td>${esc(nm(b))}${LINK[b]&&sm.und.has(LINK[b])?` <span class="muted">+ linked #${LINK[b]}</span>`:''}</td><td>${chips(b)}</td></tr>`;}).join('')}</table></div></section></div>`;}
+  h+=`<section class="panel" style="margin-top:20px"><h2>Teams</h2><div class="teams">${sm.teams.map(t=>`<div class="team ${c&&c.t===t?'cur':''}"><h3>${esc(t.name)}</h3><div class="tm">${NL[t.night]} · ${t.players.length} players</div><ol>${t.players.map(p=>`<li><span class="tier ${sm.tierOf(p.bib)}">${sm.tierOf(p.bib)}</span> #${p.bib} ${esc(nm(p.bib))}</li>`).join('')}</ol></div>`).join('')}</div></section>
+   <section class="panel"><details><summary>Night-by-night slack</summary>${slack(sm)}</details></section>
+   <section class="panel"><h2>Log</h2><div class="log">${sm.log.slice().reverse().map(l=>`<div>${esc(l.t)}</div>`).join('')||'<span class="muted">No picks yet.</span>'}</div></section>`;
+  $('#app').innerHTML=h;const pi=$('#pin');if(pi){pi.focus();pi.onkeydown=e=>{if(e.key==='Enter')pick();};}}
+function slack(sm){const used=[...new Set(sm.teams.map(t=>t.night))];const rem=[...sm.und];
+  return `<div class="scroll"><table><tr><th>Night</th><th class="num">Open spots</th><th class="num">Players left who can make it</th><th class="num">Players left who can only make it</th></tr>${NIGHTS.filter(d=>used.includes(d)).map(d=>{const open=sm.teams.filter(t=>t.night===d).reduce((s,t)=>s+plan().max-t.players.length,0);
+    const only=rem.filter(b=>{const ok=nightsOf(b).filter(x=>used.includes(x));return ok.length===1&&ok[0]===d;}).length;return `<tr><td>${NL[d]}</td><td class="num">${open}</td><td class="num">${rem.filter(b=>nightsOf(b).includes(d)).length}</td><td class="num">${only}</td></tr>`;}).join('')}</table></div>`;}
+function pick(){const sm=sim(),c=sm.cur;if(!c)return;const b=+$('#pin').value;const err=m=>$('#perr').textContent=m;
+  if(!PL[b])return err(`#${$('#pin').value} isn’t on this roster.`);if(!sm.und.has(b))return err(`#${b} ${nm(b)} is already on a team.`);
+  if(c.tr!=='B'&&sm.tierOf(b)!==c.tr)return err(`#${b} is ${sm.tierOf(b)==='A'?'an':'a'} ${sm.tierOf(b)}. This round is ${c.tr}’s only.`);
+  if(c.an.allowed.includes(b)){commit({bib:b});return;}
+  const d=$('#dlg');const night=c.t.night;const s=LINK[b]&&sm.und.has(LINK[b])?LINK[b]:null;
+  const miss=[b,s].filter(x=>x&&!nightsOf(x).includes(night));
+  if(miss.length){const res=sm.canTake(c.t,b,night);
+    if(res==='hard')return err(`${miss.map(x=>'#'+x).join(' and ')} can’t make ${NL[night]}s, and even with ${NL[night]} confirmed this pick would leave another player with no team. Choose again.`);
+    d.innerHTML=`<h2 class="cond" style="margin-top:0">${miss.map(x=>`#${x} ${esc(nm(x))}`).join(' and ')} ${miss.length>1?'aren’t':'isn’t'} available ${NL[night]}s</h2><p>${miss.map(x=>`#${x} listed ${nightsOf(x).map(y=>NL[y]).join(', ')}.`).join(' ')}${s?` #${b} and #${s} are linked and go to the same team.`:''}</p>${res==='soft'?'<p>Keeping this pick also changes the A/C balance. Every player still has a team.</p>':''}<div class="row"><button class="ghost" onclick="dlgClose()">Choose again</button><button class="primary" onclick="commit({bib:${b},night:'${night}'${res==='soft'?',force:true':''}})">Family confirmed ${NL[night]} — keep pick</button></div>`;
+    d.showModal();return;}
+  if(c.an.soft.includes(b)){d.innerHTML=`<h2 class="cond" style="margin-top:0">Taking #${b} breaks the A/C balance</h2><p>Every player still has a team that fits her nights, but another team won’t get its full A’s or C’s.</p><div class="row"><button class="ghost" onclick="dlgClose()">Choose again</button><button class="primary" onclick="commit({bib:${b},force:true})">Keep pick anyway</button></div>`;d.showModal();return;}
+  return err(`Taking #${b} would leave another player with no team that fits her nights. Choose again.`);}
+function dlgClose(){$('#dlg').close();const p=$('#pin');if(p){p.value='';p.focus();}}
+function commit(p){if($('#dlg').open)$('#dlg').close();S.picks.push(p);save();render();}
+function undo(){S.picks.pop();save();render();}
+
+function rosters(){const sm=sim();const issues=[];sm.teams.forEach(t=>t.players.forEach(p=>{if(!nightsOf(p.bib).includes(t.night))issues.push(`#${p.bib} on ${t.name} (${NL[t.night]})`);}));
+  $('#app').innerHTML=sharePanel(sm)+`<section class="panel"><h2>Final rosters</h2><p class="sub">${sm.und.size?`${sm.und.size} players not yet placed.`:'All players placed.'} ${issues.length?'Night conflicts: '+issues.join(', '):'Every player is on a team that practices a night she can make.'}</p>
+   <div class="teams">${sm.teams.map(t=>`<div class="team"><h3>${esc(t.name)}</h3><div class="tm">${NL[t.night]} · ${t.players.length} players · ${t.a} A · ${t.c} C</div><div class="tm">Jerseys: ${esc(sizeCounts(t.players.map(p=>p.bib)))}</div><ol>${t.players.map(p=>`<li><span class="tier ${sm.tierOf(p.bib)}">${sm.tierOf(p.bib)}</span> #${p.bib} ${esc(nm(p.bib))} <span class="muted">· ${esc(sz(p.bib))}${S.ci.sizes[p.bib]?' (changed)':''}</span>${p.how!=='pick'?` <span class="muted">(${p.how==='daughter'?'coach’s daughter':p.how==='availability'?'placed for availability':'linked player'})</span>`:''}</li>`).join('')}</ol></div>`).join('')}</div></section>`;}
+const RESULTS_TO='recleague@cggbl.com';
+function sharePanel(sm){const subj=encodeURIComponent('CGGBL draft results — '+DATA.division);
+  return `<section class="panel share"><h2>Required: send these results before you leave</h2>
+   <p class="sharewarn">These results are saved only on this computer. If this page is closed or the browser is cleared before they’re sent, the draft is lost.</p>
+   <ol class="sharesteps">
+    <li><b>Copy the results.</b> <button class="primary" onclick="copyResults()">Copy results</button> <span id="cpok" class="ok-txt"></span></li>
+    <li><b>If you have internet:</b> paste the results into an email and send it to <a href="mailto:${RESULTS_TO}?subject=${subj}"><b>${RESULTS_TO}</b></a>. <a class="btnlink" href="mailto:${RESULTS_TO}?subject=${subj}">Open email</a></li>
+    <li><b>If you don’t have internet:</b> paste the results into Word and save it. Send it to ${RESULTS_TO} once you have internet.</li>
+    <li><b>Keep this page open</b> and don’t clear the browser until the commissioner confirms the results arrived.</li>
+   </ol>
+   <textarea id="restxt" readonly style="width:100%;height:200px;font:13px ui-monospace,Menlo,Consolas,monospace" onclick="this.select()">${esc(exportText(sm))}</textarea></section>`;}
+function copyResults(){const t=$('#restxt');const done=()=>{$('#cpok').textContent='Copied. Now paste it into an email or Word.';};
+  const fb=()=>{t.focus();t.select();try{document.execCommand('copy');done();}catch(e){$('#cpok').textContent='Click in the box, select all (Ctrl+A or Cmd+A), then copy.';}};
+  if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(t.value).then(done,fb);else fb();}
+function exportText(sm){const L=sm.L;return ['CGGBL draft results — '+DATA.division,
+'Order: '+S.order.map((n,i)=>`${i+1}. ${n} (${NN[S.coaches[n].night]}, daughters ${(S.coaches[n].daughters||[]).map(b=>'#'+b).join(' ')||'none'})`).join('; '),
+'Data: loaded '+BUNDLE.built+', version '+S.hash,
+'Check-in no-shows: '+(S.absent.map(b=>'#'+b+' '+nm(b)).join(', ')||'none'),
+'Check-in availability changes: '+(Object.keys(S.ci.nights).map(Number).map(b=>`#${b} ${nm(b)}: ${PL[b].prev.map(x=>NN[x]).join('/')}${PL[b].prevConfirmed?'':' (unconfirmed)'} -> ${PL[b].nights.map(x=>NN[x]).join('/')}`).join('; ')||'none'),
+'Check-in player links: '+(S.ci.links.map(l=>'#'+l[0]+'/#'+l[1]).join(', ')||'none'),
+'Check-in jersey size changes: '+(Object.keys(S.ci.sizes).map(Number).sort((a,b)=>a-b).map(b=>`#${b} ${nm(b)}: ${PL[b].regSize||'none'} -> ${PL[b].size}`).join('; ')||'none'),
+'Grades: '+JSON.stringify(S.grades),
+'Missed evals added: '+JSON.stringify(S.noShow)+(S.tieSwap?' (tie swapped)':''),
+'A list: '+[...L.A].sort((a,b)=>a-b).join(', '),
+'C list: '+[...L.C].sort((a,b)=>a-b).join(', '),
+'Picks: '+JSON.stringify(S.picks),
+...sm.teams.map(t=>`${t.name} (${NN[t.night]}; jerseys ${sizeCounts(t.players.map(p=>p.bib))}): `+t.players.map(p=>`#${p.bib} ${nm(p.bib)} [${sm.tierOf(p.bib)}; ${nightsOf(p.bib).map(x=>NN[x]).join('/')}; ${sz(p.bib)}]${p.how!=='pick'?' ('+p.how+')':''}`).join(', ')),
+'Unplaced: '+([...sm.und].join(', ')||'none'),
+'Log: '+sm.log.map(l=>l.t).join(' | ')].join('\n');}
+(function boot(){let p=null;try{p=sessionStorage.getItem('cggbl-pass')}catch(e){}if(p)unlock(p);else render();})();
+</script>
+</body>
+</html>
